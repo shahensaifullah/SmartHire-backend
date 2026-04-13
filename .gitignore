@@ -79,5 +79,6 @@ celerybeat-schedule
 # Docker
 *.pid
 *.sock
-#public/*
-#!public/.gitkeep
+public/*
+!public/.gitkeep
+roadmap.txt
