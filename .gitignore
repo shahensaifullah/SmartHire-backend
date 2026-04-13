@@ -81,4 +81,3 @@ celerybeat-schedule
 *.sock
 public/*
 !public/.gitkeep
-roadmap.txt
