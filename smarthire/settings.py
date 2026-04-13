@@ -39,9 +39,16 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    "rest_framework",
+]
 
-FOLDER_APPS = []
+FOLDER_APPS = [
+    "users.apps.UsersConfig",
+    "candidates.apps.CandidatesConfig",
+    "recruiters.apps.RecruitersConfig",
+    "companies.apps.CompaniesConfig",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + FOLDER_APPS
 
@@ -81,11 +88,11 @@ WSGI_APPLICATION = 'smarthire.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "smart_hire",
         "USER": "postgres",
         "PASSWORD": "postgres",
-        "HOST": "db",
+        "HOST": "localhost",
         "PORT": "5432",
     }
 }
@@ -127,3 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+APPEND_SLASH = False
+
+AUTH_USER_MODEL = "users.User"
+
